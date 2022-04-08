@@ -1,0 +1,169 @@
+<div class="tiles__scroller--inner" id="landingCaseStudies">
+                        
+</div>
+
+<script id="landing-case-studies-template" type="text/x-handlebars-template">
+    {{#each caseStudies}}
+        {{#ifEven @index}}
+            <div class="page-outer case-studies-section -alternate">
+        {{else}}
+            <div class="page-outer case-studies-section">
+        {{/ifEven}}
+        
+            <div class="case-study__inner{{#if @last}}  -last{{/if}}">
+                {{#ifEven @index}}
+                    <div class="tile-row -margin-right">
+                {{else}}
+                    <div class="tile-row">
+                {{/ifEven}}
+                {{#ifEven @index}}
+                    <div class="services-example__image text-animation">
+                {{else}}
+                    <div class="services-example__image text-animation -alternate">
+                {{/ifEven}}
+                    {{#ifEven @index}}
+                        <div class="services-example__logo">
+                    {{else}}
+                        <div class="services-example__logo -alternate">
+                    {{/ifEven}}
+                            <img src="{{this.logoImg}}" />
+                        </div>
+                        <a href="{{this.link}}"><img src="{{this.thumbnailImg}}" /></a>
+                    </div>
+                {{#ifEven @index}}
+                    <div class="services-example__description">
+                {{else}}
+                    <div class="services-example__description -alternate">
+                {{/ifEven}}
+                        <h3>{{this.title}}</h3>
+                        <p>{{this.description}}</p>
+                        <a class="tile-read-more" href="{{this.link}}">Read the full case study</a>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    {{/each}}
+</script>
+
+<script type="text/javascript">
+    Handlebars.registerHelper('ifEven', function (index, options) {
+        if(index%2 == 0){
+            return options.fn(this);
+        } else {
+            return options.inverse(this);
+        }
+    });
+    var landingData = {
+        caseStudies: [
+            {
+                title: "Humanizing technical topics",
+                description: "Okta is the leading independent provider of identity management solutions—but they face fierce competition from companies like Microsoft, RSA, and OneLogin.",
+                thumbnailImg: '/agencystatic/images/case-studies/thumb-okta.jpg',
+                logoImg: '/agencystatic/images/case-studies/logo-okta.png',
+                link: '/content-marketing-case-studies/okta'
+            },
+            {
+                title: "Driving growth in new markets",
+                description: "As the content partner to Canada's most trusted brand, we work with MEC to bring their mission online, engaging with audiences digitally to help them discover new ways of enjoying the outdoors.",
+                thumbnailImg: '/agencystatic/images/case-studies/thumb-mec.jpg',
+                logoImg: '/agencystatic/images/case-studies/logo-mec.png',
+                link: '/content-marketing-case-studies/mec'
+            },
+            {
+                title: "Taking over a category",
+                description: "HERB started as a small, crowdfunded operation looking to produce a book focused on edibles and cannabis-based cooking. Government regulations restrict traditional online advertising related to marijuana, so they needed content to raise awareness and build their profile online.",
+                thumbnailImg: '/agencystatic/images/case-studies/thumb-herb.jpg',
+                logoImg: '/agencystatic/images/case-studies/logo-herb.png',
+                link: '/content-marketing-case-studies/herb'
+            },
+            {
+                title: "Engaging a global audience",
+                description: "Herschel is a leading lifestyle, travel, and apparel brand with global appeal. With that comes the challenge of creating content for discerning readers worldwide—stylish travelers who are curious about other cultures and passionate about discovering new destinations.",
+                thumbnailImg: '/agencystatic/images/case-studies/thumb-herschel.jpg',
+                logoImg: '/agencystatic/images/services/logo-herschel.png',
+                link: '/content-marketing-case-studies/herschel-supply-co'
+            },
+            {
+                title: "Mobilizing current and future activists",
+                description: "(RED) is driven by an ambitious goal: to wipe out AIDS by 2030. The global charity was co-founded by Bono and Bobby Shriver in 2006 and has since allied with several of the world’s most iconic brands.",
+                thumbnailImg: '/agencystatic/images/case-studies/thumb-red.jpg',
+                logoImg: '/agencystatic/images/clients/logo-red.png',
+                link: '/content-marketing-case-studies/red'
+            },
+            {
+                title: "Amplifying and attracting exceptional voices",
+                description: "23,000 agents. 1,000 offices. 70 countries. Sotheby’s International Realty® is one of the world’s most respected luxury brands. In order to cement their position, they partnered with Inman to develop a sponsored content column that conveys the brand’s expertise by giving agents a share of voice.",
+                thumbnailImg: '/agencystatic/images/case-studies/thumb-sothebys-inman.jpg',
+                logoImg: '/agencystatic/images/clients/logo-sothebys.png',
+                link: '/content-marketing-case-studies/sothebys-international-inman'
+            },
+            {
+                title: "Repackaging longform reports",
+                description: "As a leading provider in the identity management space, Okta works with thousands of customers to help them identify security risks, and pair them with the right solutions to keep their data secure.",
+                thumbnailImg: '/agencystatic/images/case-studies/thumb-okta2.jpg',
+                logoImg: '/agencystatic/images/case-studies/logo-okta.png',
+                link: '/content-marketing-case-studies/okta2'
+            },
+            {
+                title: "Amplifying reach through influencers",
+                description: "Just like their own 100% natural coconut water, ZICO believes that “being true to your nature and who you are at the core” is powerful beyond measure. To help bring this message to life, ZICO planned a series of experiential events in LA and NYC, and tapped Quietly to extend the reach of these physical activations online.",
+                thumbnailImg: '/agencystatic/images/case-studies/thumb-zico.jpg',
+                logoImg: '/agencystatic/images/clients/logo-zico.png',
+                link: '/content-marketing-case-studies/zico'
+            },
+            {
+                title: "Changing consumer perceptions",
+                description: "When consumers have a variety of seafood to choose from—salmon, shrimp, tuna—the lesser-known tilapia has to work harder to stand out.",
+                thumbnailImg: '/agencystatic/images/case-studies/thumb-regal-springs.jpg',
+                logoImg: '/agencystatic/images/case-studies/logo-regal-springs.png',
+                link: '/content-marketing-case-studies/regal-springs'
+            },
+            {
+                title: "Owning the conversation",
+                description: "As owner of a controversial new generic top-level domain (ngTLD), Vox Populi Registry works hard to prove how brands can use .SUCKS to protect themselves online, provide a feedback loop for customers, and propel their companies forward.",
+                thumbnailImg: '/agencystatic/images/case-studies/thumb-dotsucks.jpg',
+                logoImg: '/agencystatic/images/clients/logo-dotsucks.png',
+                link: '/content-marketing-case-studies/sucks'
+            },
+            {
+                title: "Creating a clear path to purchase",
+                description: "As Canada’s largest domain registrar, Rebel competes with better-known incumbents like GoDaddy. As a result, they have to approach their campaigns more strategically...",
+                thumbnailImg: '/agencystatic/images/case-studies/thumb-rebel.jpg',
+                logoImg: '/agencystatic/images/case-studies/logo-rebel.png',
+                link: '/content-marketing-case-studies/rebel'
+            },
+            {
+                title: "Aligning people and process to win with content",
+                description: "As they geared up for their most ambitious corporate expansion strategy, Canada’s most trusted brand needed to ensure all content marketing efforts were aligned.",
+                thumbnailImg: '/agencystatic/images/case-studies/thumb-mec2.jpg',
+                logoImg: '/agencystatic/images/case-studies/logo-mec.png',
+                link: '/content-marketing-case-studies/mec2'
+            },
+            {
+                title: "Engaging qualified B2B leads",
+                description: "OfficeSpace Software is a highly effective facilities management tool that creates, records, tracks and administers everything in the office. From move, space, and request management to visual directories, actionable reporting, analytics and resource tracking...",
+                thumbnailImg: '/agencystatic/images/case-studies/thumb-officespace.jpg',
+                logoImg: '/agencystatic/images/case-studies/logo-officespace.png',
+                link: '/content-marketing-case-studies/officespace'
+            },
+            {
+                title: "Building owned as an inbound channel",
+                description: "With a need to drive qualified traffic in an increasingly crowded market, an affiliate of the world’s most prestigious real estate brand turned to Quietly for help.",
+                thumbnailImg: '/agencystatic/images/case-studies/thumb-sothebys-canada.jpg',
+                logoImg: '/agencystatic/images/clients/logo-sothebys-canada.png',
+                link: '/content-marketing-case-studies/sothebys-international-canada'
+            },
+            {
+                title: "Driving traffic online and in-store",
+                description: "There are many reasons why Indochino ranks among the world’s top made-to-measure menswear brands, from their expert tailoring to their innovative online retail experience.",
+                thumbnailImg: '/agencystatic/images/case-studies/thumb-indochino.jpg',
+                logoImg: '/agencystatic/images/case-studies/logo-indochino.png',
+                link: '/content-marketing-case-studies/indochino'
+            },
+
+        ]
+    };
+    var template = Handlebars.compile(document.getElementById('landing-case-studies-template').innerHTML);
+    var landingCaseStudiesData = template(landingData);
+    document.getElementById('landingCaseStudies').innerHTML += landingCaseStudiesData;
+</script>

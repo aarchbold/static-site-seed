@@ -1,0 +1,73 @@
+/* Modal styles
+*/
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: none;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    background-color: black;
+}
+
+.modal-content {
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    background-color: white;
+    color: $color-font-invert;
+    padding: 40px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.modal-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    text-decoration: none;
+    color: $color-main-header;
+    font-weight: bold;
+}
+
+.modal-hdr {
+    font-weight: bold;
+    line-height: 1.3;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.form-inputs, .form-loading, .form-success {
+    display: none;
+    position: relative;
+    min-height: 200px;
+}
+
+.form-inputs {
+    display: block;
+}
+
+.form-loading__text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    line-height: 1.3;
+    width: 100%;
+}
+
+

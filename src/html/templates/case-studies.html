@@ -1,0 +1,70 @@
+<div class="tiles__scroller--inner" id="homeCaseStudies">
+                        
+</div>
+
+<script id="case-studies-template" type="text/x-handlebars-template">
+    {{#each caseStudies}}
+    {{#ifEven @index}}
+        <div class="tile tile-float-left tile-12 text-animation">
+    {{else}}
+        <div class="tile tile-float-right tile-22 text-animation">
+    {{/ifEven}}
+        <div class="tile-inner">
+            <div class="tile-image">
+                <img class="tile-image__logo{{#ifEven @index}} -left{{/ifEven}}" src={{this.logoImg}} />
+                <a href={{this.link}}><img class="tile-image__thumb" src={{this.thumbnailImg}} /></a>
+            </div>
+            <div class="tile-padding">
+                <h3>{{this.title}}</h3>
+                <p>{{this.description}}</p>
+                <a class="tile-read-more" href={{this.link}}>Read the full case study</a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</script>
+
+<script type="text/javascript">
+    Handlebars.registerHelper('ifEven', function (index, options) {
+        if(index%2 == 0){
+            return options.fn(this);
+        } else {
+            return options.inverse(this);
+        }
+    });
+    var data = {
+        caseStudies: [
+            {
+                title: "Guiding buyers down the path to purchase",
+                description: "Sotheby’s International Realty® competes at the highest level as a real estate brand—and had to do the same as a lifestyle content publisher in order to build their audience and engage the emerging affluent consumer.",
+                thumbnailImg: '/agencystatic/images/case-studies/thumb-sothebys2.jpg',
+                logoImg: '/agencystatic/images/clients/logo-sothebys.png',
+                link: '/content-marketing-case-studies/sothebys-international-reside'
+            },
+            {
+                title: "Humanizing technical topics",
+                description: "Okta is the leading independent provider of identity management solutions—but they face fierce competition from companies like Microsoft, RSA, and OneLogin.",
+                thumbnailImg: '/agencystatic/images/case-studies/thumb-okta.jpg',
+                logoImg: '/agencystatic/images/case-studies/logo-okta.png',
+                link: '/content-marketing-case-studies/okta'
+            },
+            {
+                title: "Driving growth in new markets",
+                description: "As the content partner to Canada's most trusted brand, we work with MEC to bring their mission online, engaging with audiences digitally to help them discover new ways of enjoying the outdoors.",
+                thumbnailImg: '/agencystatic/images/case-studies/thumb-mec.jpg',
+                logoImg: '/agencystatic/images/case-studies/logo-mec.png',
+                link: '/content-marketing-case-studies/mec'
+            },
+            {
+                title: "Amplifying reach through influencers",
+                description: "Just like their own 100% natural coconut water, ZICO believes that “being true to your nature and who you are at the core” is powerful beyond measure. To help bring this message to life, ZICO planned a series of experiential events in LA and NYC, and tapped Quietly to extend the reach of these physical activations online.",
+                thumbnailImg: '/agencystatic/images/case-studies/thumb-zico.jpg',
+                logoImg: '/agencystatic/images/clients/logo-zico.png',
+                link: '/content-marketing-case-studies/zico'
+            }
+        ]
+    };
+    var template = Handlebars.compile(document.getElementById('case-studies-template').innerHTML);
+    var caseStudiesData = template(data);
+    document.getElementById('homeCaseStudies').innerHTML += caseStudiesData;
+</script>

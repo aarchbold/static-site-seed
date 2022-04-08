@@ -1,0 +1,31 @@
+/* settings styles
+*/
+
+// breakpoints
+$breakpoint-1040: 1040px;
+$breakpoint-940: 940px;
+$breakpoint-840: 840px;
+$breakpoint-650: 650px;
+$breakpoint-530: 530px;
+$breakpoint-services: 675px;
+$breakpoint-phablet: 600px;
+$breakpoint-phone: 400px;
+$breakpoint-tablet: 770px;
+
+// branded colors
+$color-bg: black;
+$color-main-font: #ffffff;
+$color-font-invert: #424242;
+$color-main-header: #dc1d66;
+$color-button-main: #dc1d66;
+$color-bg-alternate: #424242;
+$color-bg-form: #707070;
+$color-font-light: #bababa;
+$color-main-link: #c7b9dc;
+$color-faq-header: #BCAAD5;
+
+// buttons
+$button-color-primary: #6e5c86;
+
+// shadows
+$drop-shadow-icons: 5px 5px 22px -6px rgba(0, 0, 0, 0.5);
