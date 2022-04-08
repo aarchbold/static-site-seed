@@ -21,7 +21,10 @@ npm install gulp -g
 ```
 * Clone this repo to your local machine
 * Navigate to the root of the repo
-* Run "npm install" (this should install all dependencies)
+* To install dependencies:
+```
+npm install
+```
 * To build files for deployment:
 ```
 gulp
