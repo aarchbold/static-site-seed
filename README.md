@@ -1,9 +1,10 @@
 # static-site-seed
-This is a static site seed. It is meant as a starting point for creating simple marketing sites. By default, it uses some fancy Front End only features like:
+This is a static site seed. It is meant as a starting point for creating simple marketing sites. By default, it uses some fancy Front End only features to make life a bit easier. For example:
 * gulp
 * sass
 * jquery
 * handlebars
+* fileinclude
 * slick carousel
 
 ## local development
