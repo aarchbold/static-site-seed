@@ -14,14 +14,14 @@ var gulp = require('gulp'),
         sassPath: './src/sass',
         cssPath: './src/css',
         cssDest: './site/static/css',
-        htmlSrc: './src/html/site/*',
+        htmlSrc: './src/html/site',
         htmlDest: './site'
     }
 
 gulp.task('fileinclude', function() {
     return gulp.src([
             config.htmlSrc + '/**/*.html',
-            config.htmlSrc + '*.html'
+            config.htmlSrc + '/*.html'
         ])
         .pipe(fileinclude({
             prefix: '@@',
@@ -72,7 +72,7 @@ gulp.task('autoprefixer', function () {
 // Rerun the tasks when a file changes
 gulp.task('watch', function() {
     gulp.watch(config.htmlSrc + '/**/*.html', ['fileinclude']);
-    gulp.watch(config.htmlSrc + '*.html', ['fileinclude']);
+    gulp.watch(config.htmlSrc + '/*.html', ['fileinclude']);
     gulp.watch(config.sassPath + '/**/*.scss', ['sass']);
     gulp.watch(config.cssPath + '/*.css', ['autoprefixer']);
     gulp.watch(config.vendorsPath + '/*.js', ['vendors']);

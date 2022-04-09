@@ -48,7 +48,7 @@ Gulp watch will watch all the following directories for changes:
 * /src/js/app - marketing site specific JavaScript files. 
 * /src/sass - raw sass/css files
 
-Note: images and videos are stored in the compiled site static directory.
+Assets like images, videos, fonts, etc are stored in the compiled site static directory.
 * /site/static - compiled css, js, and static images and video files
 
 The files you want to deploy will be built and stored here:
